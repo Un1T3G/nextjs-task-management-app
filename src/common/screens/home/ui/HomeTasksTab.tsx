@@ -19,7 +19,7 @@ export function HomeTasksTab({ table, tableIndex }: IProps) {
   const listRef = useRef<HTMLDivElement>(null)
 
   return (
-    <LayoutContent>
+    <LayoutContent className="max-w-[100vw]">
       <Header>
         <HeaderTitleNoSSR>{table.title}</HeaderTitleNoSSR>
         <div className="flex items-center">
@@ -28,12 +28,14 @@ export function HomeTasksTab({ table, tableIndex }: IProps) {
         </div>
       </Header>
       <ListScroll listRef={listRef} />
-      <div className="overflow-hidden">
-        <TaskList
-          listRef={listRef}
-          columns={table.columns}
-          tableIndex={tableIndex}
-        />
+      <div>
+        <div className="overflow-hidden">
+          <TaskList
+            listRef={listRef}
+            columns={table.columns}
+            tableIndex={tableIndex}
+          />
+        </div>
       </div>
     </LayoutContent>
   )

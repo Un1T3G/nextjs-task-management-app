@@ -9,7 +9,7 @@ interface IProps {
   children?: ReactNode | ((props: { onClose: VoidFunction }) => ReactNode)
 }
 
-export function Modal({ open, onClose, children }: IProps) {
+function WrappedComponent({ onClose, children }: Omit<IProps, 'open'>) {
   useEffect(() => {
     document.body.style.overflow = 'hidden'
   }, [])
@@ -19,7 +19,7 @@ export function Modal({ open, onClose, children }: IProps) {
     document.body.style.overflow = ''
   }
 
-  return open ? (
+  return (
     <Portal>
       <Wrapper onClose={handleClose}>
         <ModalWrapper>
@@ -29,7 +29,15 @@ export function Modal({ open, onClose, children }: IProps) {
         </ModalWrapper>
       </Wrapper>
     </Portal>
-  ) : null
+  )
+}
+
+export function Modal({ open, onClose, children }: IProps) {
+  if (!open) {
+    return null
+  }
+
+  return <WrappedComponent onClose={onClose} children={children} />
 }
 
 interface IModalTitleProps

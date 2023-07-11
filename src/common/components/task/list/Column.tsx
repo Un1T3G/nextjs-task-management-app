@@ -57,8 +57,8 @@ export function Column({ column, columns, tableIndex, columnIndex }: IProps) {
 
 const Wrapper = tw.div`
 space-y-5
-basis-full
-w-[280px]
+basis-[280px]
+shrink-0
 `
 
 const Title = tw.h4`

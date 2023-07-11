@@ -26,6 +26,8 @@ export function AddNewTaskButton({ table, tableIndex }: IProps) {
     false: <AiOutlinePlus className="text-white" />,
   }
 
+  console.log(open)
+
   return (
     <>
       <Button onClick={toggleOpen}>
