@@ -46,13 +46,13 @@ Bonus:
 
 ### Screenshot
 
-![Screenshot](./screenshots/Screenshot_1)
-![Screenshot](./screenshots/Screenshot_2)
-![Screenshot](./screenshots/Screenshot_3)
+![Screenshot](./screenshots/Screenshot_1.png)
+![Screenshot](./screenshots/Screenshot_2.png)
+![Screenshot](./screenshots/Screenshot_3.png)
 
 ### Links
 
-- Live Site URL: [link](https://kanban-task-management-app.netlify.app/)
+- Live Site URL: [link]([https://kanban-task-management-app.netlify.app/](https://nextjs-task-management-app.vercel.app/))
 - Design URL: [link](https://www.frontendmentor.io/challenges/kanban-task-management-web-app-wgQLt-HlbB)
 
 ### Used technologies
