@@ -32,12 +32,12 @@ function WrappedComponent({ onClose, children }: Omit<IProps, 'open'>) {
   )
 }
 
-export function Modal({ open, ...rest }: IProps) {
+export function Modal({ open, children, ...rest }: IProps) {
   if (!open) {
     return null
   }
 
-  return <WrappedComponent {...rest} />
+  return <WrappedComponent {...rest}>{children}</WrappedComponent>
 }
 
 interface IModalTitleProps
