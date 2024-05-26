@@ -15,20 +15,19 @@ import { ColumnForm } from './column-form'
 import { TitleField } from './title-field'
 
 import { useSnackbar } from 'shared/ui'
-import { useCreateTableForm } from '../model/use-table-form'
-import { createTableDialogModel } from '../model'
 
 import { useDialogApi } from 'shared/lib'
+import { updateTableDialogModel, useUpdateTableForm } from '../model'
 
 const Content = () => {
   const { showSnackbar } = useSnackbar()
 
-  const { open, toggleOpen } = useDialogApi(createTableDialogModel)
+  const { open, toggleOpen } = useDialogApi(updateTableDialogModel)
 
-  const { control, onSubmit } = useCreateTableForm({
+  const { control, onSubmit } = useUpdateTableForm({
     onCreate: () => {
       showSnackbar({
-        message: 'Table created successfully',
+        message: 'Table updated successfully',
         type: 'success',
       })
       toggleOpen()
@@ -55,7 +54,7 @@ const Content = () => {
               justifyContent="space-between"
               sx={{ mb: 1 }}
             >
-              <DialogTitle>Add new table</DialogTitle>
+              <DialogTitle>Update table</DialogTitle>
               <ModalClose sx={{ position: 'static' }} />
             </Stack>
             <TitleField control={control} />
@@ -74,7 +73,7 @@ const Content = () => {
               <ColumnForm append={append} />
             </Stack>
             <Button type="submit" sx={{ width: '100%' }}>
-              Create new table
+              Save changes
             </Button>
           </form>
         </ModalDialog>
@@ -83,8 +82,8 @@ const Content = () => {
   )
 }
 
-export const CreateTableDialog = () => {
-  const { open } = useDialogApi(createTableDialogModel)
+export const UpdateTableDialog = () => {
+  const { open, toggleOpen } = useDialogApi(updateTableDialogModel)
 
   return open ? <Content /> : null
 }

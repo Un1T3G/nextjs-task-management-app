@@ -20,6 +20,8 @@ $tables.on(createTableEvent, (tables, { title, columnTitles }) => {
     })),
   }
 
+  console.log('new table', newTable)
+
   return [...tables, newTable]
 })
 

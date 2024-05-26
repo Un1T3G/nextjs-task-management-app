@@ -11,13 +11,17 @@ import * as React from 'react'
 
 import { useDialogApi, useToggle } from 'shared/lib'
 import { useSelectedTable } from 'entities/table'
-import { deleteTableDialogModel } from 'features/table'
+import { deleteTableDialogModel, updateTableDialogModel } from 'features/table'
 
 export const MenuButton = () => {
   const { table } = useSelectedTable()
 
-  const [openEditDialog, toggleEditDialog] = useToggle(false)
-  const { toggleOpen } = useDialogApi(deleteTableDialogModel)
+  const { toggleOpen: toggleOpenUpdateDialog } = useDialogApi(
+    updateTableDialogModel
+  )
+  const { toggleOpen: toggleOpenDeleteDialog } = useDialogApi(
+    deleteTableDialogModel
+  )
 
   if (!table) {
     return
@@ -33,13 +37,17 @@ export const MenuButton = () => {
           <UilEllipsisV />
         </_MenuButton>
         <Menu placement="bottom-end">
-          <MenuItem onClick={toggleEditDialog}>
+          <MenuItem onClick={toggleOpenUpdateDialog}>
             <ListItemDecorator>
               <UilEditAlt />
             </ListItemDecorator>
             Edit table
           </MenuItem>
-          <MenuItem onClick={toggleOpen} variant="soft" color="danger">
+          <MenuItem
+            onClick={toggleOpenDeleteDialog}
+            variant="soft"
+            color="danger"
+          >
             <ListItemDecorator sx={{ color: 'inherit' }}>
               <UilTrash />
             </ListItemDecorator>
