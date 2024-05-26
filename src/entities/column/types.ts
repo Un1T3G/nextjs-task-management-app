@@ -1,6 +1,8 @@
+import { ITask } from 'entities/task'
+
 export interface IColumn {
   id: string
   title: string
-  tasks: any[]
+  tasks: ITask[]
   tableId: string
 }

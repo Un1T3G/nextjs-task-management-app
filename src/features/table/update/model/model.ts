@@ -27,8 +27,6 @@ $tables.on(updateTableEvent, (tables, { title, columns, tableIndex }) => {
       .filter(Boolean) as any,
   }
 
-  console.log('update table', table)
-
   tables[tableIndex] = table
 
   return [...tables]

@@ -25,7 +25,7 @@ export const TaskCard = ({ task, onClick, onDragStart, draggable }: IProps) => {
       <Typography>{`${doneCount} of ${todoCount} todos`}</Typography>
       <LinearProgress
         determinate
-        value={todoCount > 0 ? doneCount / task.todos.length : 0}
+        value={todoCount > 0 ? (doneCount / task.todos.length) * 100 : 0}
         thickness={8}
       />
     </Card>
