@@ -25,8 +25,8 @@ const Content = () => {
         </DialogTitle>
         <Divider />
         <DialogContent>
-          Are you sure you want to delete the "{task?.title}" task? This action
-          will remove all todos and cannot be reversed.
+          Are you sure you want to delete the &quot;{task?.title}&quot; task?
+          This action will remove all todos and cannot be reversed.
         </DialogContent>
         <DialogActions>
           <Button variant="solid" color="danger" onClick={deleteTable}>

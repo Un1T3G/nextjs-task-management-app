@@ -27,8 +27,8 @@ export const DeleteTableDialog = () => {
         </DialogTitle>
         <Divider />
         <DialogContent>
-          Are you sure you want to delete the "{table.title}" table? This action
-          will remove all columns and tasks and cannot be reversed.
+          Are you sure you want to delete the &quot;{table.title}&quot; table?
+          This action will remove all columns and tasks and cannot be reversed.
         </DialogContent>
         <DialogActions>
           <Button variant="solid" color="danger" onClick={deleteTable}>
