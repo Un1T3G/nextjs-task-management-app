@@ -17,11 +17,11 @@ export const theme = extendTheme({
           '900': '#312e81',
         },
         background: {
-          body: '#20212c',
-          surface: '#2b2c37',
+          body: '#f4f7fd',
+          surface: '#fff',
         },
         text: {
-          primary: '#fff',
+          primary: '#000',
         },
       },
     },

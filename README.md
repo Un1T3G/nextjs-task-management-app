@@ -17,3 +17,4 @@ and achieve your goals effortlessly.
 - Effector
 - Yup
 - React hook forms
+- FSD (Methodology)
