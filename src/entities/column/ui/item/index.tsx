@@ -2,6 +2,7 @@ import { Box, Stack, Typography } from '@mui/joy'
 import { IColumn } from 'entities/column/types'
 import { ITask } from 'entities/task'
 import { ReactNode } from 'react'
+import { COLUMN_ITEM_WIDTH } from './constants'
 
 interface IProps {
   column: IColumn
@@ -18,7 +19,7 @@ export const ColumnCard = ({
 }: IProps) => {
   return (
     <Box
-      sx={{ flexShrink: 0, flexBasis: 280 }}
+      sx={{ flexShrink: 0, flexBasis: COLUMN_ITEM_WIDTH }}
       onDrop={onDrop}
       onDragOver={onDragOver}
     >
@@ -31,3 +32,5 @@ export const ColumnCard = ({
     </Box>
   )
 }
+
+export { COLUMN_ITEM_WIDTH }

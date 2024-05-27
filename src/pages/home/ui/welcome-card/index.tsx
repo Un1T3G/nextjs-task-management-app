@@ -17,7 +17,7 @@ export const WelcomeCard = () => {
         your to-do list, and track progress all in one place. Boost productivity
         and achieve your goals effortlessly.
       </Typography>
-      <Stack flexDirection="row" columnGap={2}>
+      <Stack flexDirection="row" columnGap={2} sx={{ mb: 1 }}>
         <GetStartedButton />
         <Button
           component="a"

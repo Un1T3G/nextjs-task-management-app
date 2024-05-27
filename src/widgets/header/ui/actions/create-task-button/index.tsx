@@ -1,17 +1,23 @@
 //@ts-ignore
 import { UilPlus } from '@iconscout/react-unicons'
-import { Button } from '@mui/joy'
+import { Button, IconButton } from '@mui/joy'
 
 import { createTaskDialogModel } from 'features/task'
 
-import { useDialogApi } from 'shared/lib'
+import { useDialogApi, useIsMobile } from 'shared/lib'
 
 export const CreateTaskButton = () => {
   const { toggleOpen } = useDialogApi(createTaskDialogModel)
 
-  return (
+  const isMobile = useIsMobile()
+
+  return isMobile ? (
+    <IconButton onClick={toggleOpen} color="primary" variant="solid">
+      <UilPlus />
+    </IconButton>
+  ) : (
     <Button startDecorator={<UilPlus />} onClick={toggleOpen}>
-      Create new task
+      <span>Create new task</span>
     </Button>
   )
 }

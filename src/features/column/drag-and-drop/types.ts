@@ -4,10 +4,3 @@ export interface IDropNewTaskEventProps {
   tableIndex: number
   dropTaskIndex: number
 }
-
-export interface IChangeTaskColumnEventProps {
-  fromColumnId: string
-  newColumnId: string
-  tableIndex: number
-  taskIndex: number
-}

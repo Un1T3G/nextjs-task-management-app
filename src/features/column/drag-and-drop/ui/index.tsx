@@ -1,12 +1,11 @@
 import { ColumnCard, IColumn } from 'entities/column'
 import { TaskCard } from 'entities/task'
-
-import { useColumn } from '../model'
+import { useColumnDragAndDrop } from '../model/use-column-drag-and-drop'
 
 interface IProps {
   column: IColumn
   columnIndex: number
-  onClickTaskCard: (taskId: string, taskIndex: number) => void
+  onClickTaskCard: (taskIndex: number) => void
 }
 
 export const ColumnItem = ({
@@ -14,7 +13,9 @@ export const ColumnItem = ({
   columnIndex,
   onClickTaskCard,
 }: IProps) => {
-  const { onDragOver, onDragStart, onDrop } = useColumn({ columnIndex })
+  const { onDragOver, onDragStart, onDrop } = useColumnDragAndDrop({
+    columnIndex,
+  })
 
   return (
     <ColumnCard
@@ -26,7 +27,7 @@ export const ColumnItem = ({
             task={task}
             onDragStart={onDragStart(i)}
             draggable
-            onClick={() => onClickTaskCard(task.id, i)}
+            onClick={() => onClickTaskCard(i)}
           />
         )
       }

@@ -8,7 +8,7 @@ interface IProps {
   columnIndex: number
 }
 
-export const useColumn = ({ columnIndex }: IProps) => {
+export const useColumnDragAndDrop = ({ columnIndex }: IProps) => {
   const handleOnDragStart = (index: number) => {
     return (e: DragEvent<HTMLDivElement>) => {
       const text = JSON.stringify({
@@ -25,9 +25,13 @@ export const useColumn = ({ columnIndex }: IProps) => {
   ])
 
   const handleOnDrop = (e: DragEvent<HTMLDivElement>) => {
-    const { fromColumnIndex, dropTaskIndex } = JSON.parse(
-      e.dataTransfer.getData(DRAG_TRANSFER_KEY)
-    )
+    const data = e.dataTransfer.getData(DRAG_TRANSFER_KEY)
+
+    if (!data) {
+      return
+    }
+
+    const { fromColumnIndex, dropTaskIndex } = JSON.parse(data)
 
     if (fromColumnIndex === columnIndex) {
       return

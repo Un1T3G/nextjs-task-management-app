@@ -1,19 +1,21 @@
 import { useUnit } from 'effector-react'
 import { $selectedTable } from 'entities/table'
+import { changeTaskColumnEvent } from './model'
 import { useMemo } from 'react'
-import { changeTaskColumnEvent } from '../model/model'
-import { Select, Option } from '@mui/joy'
 
 interface IProps {
-  tableIndex: number
   columnId: string
+  tableIndex: number
   taskIndex: number
 }
 
-export const ColumnSelect = ({ tableIndex, columnId, taskIndex }: IProps) => {
+export const useColumnSelect = ({
+  columnId,
+  tableIndex,
+  taskIndex,
+}: IProps) => {
   const [table, changeTaskColumn] = useUnit([
     $selectedTable,
-
     changeTaskColumnEvent,
   ])
 
@@ -42,18 +44,8 @@ export const ColumnSelect = ({ tableIndex, columnId, taskIndex }: IProps) => {
     })
   }
 
-  return (
-    <Select
-      variant="soft"
-      sx={{ mb: 2 }}
-      value={columnId}
-      onChange={handleChange}
-    >
-      {options.map((x) => (
-        <Option key={x.id} value={x.id}>
-          {x.title}
-        </Option>
-      ))}
-    </Select>
-  )
+  return {
+    options,
+    onChange: handleChange,
+  }
 }
