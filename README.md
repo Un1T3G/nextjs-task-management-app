@@ -6,9 +6,9 @@ and achieve your goals effortlessly.
 
 ### Screenshot
 
-![Screenshot](./screenshots/Screenshot_1.png)
-![Screenshot](./screenshots/Screenshot_2.png)
-![Screenshot](./screenshots/Screenshot_3.png)
+![Screenshot](./screenshots/Screenshot1.png)
+![Screenshot](./screenshots/Screenshot2.png)
+![Screenshot](./screenshots/Screenshot3.png)
 
 ### Used technologies
 
